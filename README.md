@@ -9,4 +9,8 @@ tags covered:
 3. body = <body></body>
 4. pre = <pre></pre>
 5. h1 = <h1></h1>
-6. a = <a></a>
+6. hr = <hr>
+7. a = <a></a>
+
+Contents covered:
+
