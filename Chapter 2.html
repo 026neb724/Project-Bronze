@@ -7,5 +7,565 @@
         <h1><a href="tableofcontents.html">Back to Table of Contents Page</a></h1>
         <hr>
         <h1> Chapter 2</h1>
+        <pre>
+            Number System and Boolean Logic
+
+Welcome, NEB Class 11 Computer Science students, to Chapter 3: Number System and Boolean Logic! This chapter is fundamental to understanding how computers process and store information. Mastering these concepts is crucial not only for building a strong foundation in Computer Science but also for excelling in your NEB board examinations. The Curriculum Development Centre (CDC) and National Examination Board (NEB) curriculum for Class 11 emphasizes these topics, and you can expect questions covering number system conversions, Boolean algebra, and logic gates in your theory papers, appearing in Multiple Choice Questions (MCQ), Short Answer Questions (SAQ), and Long Answer Questions (LAQ) sections. Let's dive in and unravel the digital world's language!
+
+<h2>Introduction to Number Systems</h2>
+
+A number system is a systematic way of representing numbers. In computing, different number systems are used for various purposes, from internal processing to data representation. The value of a digit in a positional number system depends on the digit itself, its position within the number, and the base (or radix) of the number system.
+
+The main positional number systems we will study are:
+
+Decimal Number System (Base-10): This is the number system we use daily. It has 10 unique digits (0-9). Each position represents a power of 10.
+
+Binary Number System (Base-2): This system is the foundation of all digital computers. It uses only two digits: 0 and 1 (bits). Each position represents a power of 2. Computers use binary because electronic circuits have two stable states: ON (1) or OFF (0).
+
+Octal Number System (Base-8): This system uses eight digits (0-7). Each position represents a power of 8. Octal is often used as a shorthand to represent long binary numbers because three binary digits can be represented by a single octal digit.
+
+Hexadecimal Number System (Base-16): This system uses sixteen digits (0-9 and A-F, where A represents 10, B represents 11, and so on, up to F for 15). Each position represents a power of 16. Hexadecimal is widely used in computer memory addressing and data representation due to its ability to represent four binary digits with a single hexadecimal digit.
+
+The base or radix of a number system indicates the total number of unique digits or symbols used in that system.
+
+<h2>Number System Conversions</h2>
+
+Converting numbers between different bases is a critical skill in computer science. Here, we'll cover the most common conversions.
+
+<h2>1. Decimal to Binary, Octal, and Hexadecimal Conversion</h2>
+
+To convert a decimal number to another base, we use the division-remainder method. Divide the decimal number by the target base repeatedly, noting the remainders at each step. The remainders, read from bottom to top, form the number in the new base.
+
+Example 1: Decimal to Binary
+Convert (25)10 to binary.
+
+DivisionRemainder
+
+
+
+25 ÷ 2 = 12
+
+1
+
+12 ÷ 2 = 6
+
+0
+
+6 ÷ 2 = 3
+
+0
+
+3 ÷ 2 = 1
+
+1
+
+1 ÷ 2 = 0
+
+1
+
+Reading remainders from bottom to top: (11001)2. So, (25)10 = (11001)2.
+
+Example 2: Decimal to Octal
+Convert (179)10 to octal.
+
+DivisionRemainder
+
+
+
+179 ÷ 8 = 22
+
+3
+
+22 ÷ 8 = 2
+
+6
+
+2 ÷ 8 = 0
+
+2
+
+Reading remainders from bottom to top: (263)8. So, (179)10 = (263)8.
+
+Example 3: Decimal to Hexadecimal
+Convert (475)10 to hexadecimal.
+
+DivisionRemainderHex Equivalent
+
+
+
+
+
+475 ÷ 16 = 29
+
+11
+
+B
+
+29 ÷ 16 = 1
+
+13
+
+D
+
+1 ÷ 16 = 0
+
+1
+
+1
+
+Reading remainders from bottom to top: (1DB)16. So, (475)10 = (1DB)16.
+
+<h2>2. Binary, Octal, and Hexadecimal to Decimal Conversion</h2>
+
+To convert a number from any base to decimal, multiply each digit by its corresponding positional weight (base raised to the power of its position) and sum the results. Positions are counted from right to left, starting with 0.
+
+Example 1: Binary to Decimal
+Convert (11011)2 to decimal.
+
+(1 × 24) + (1 × 23) + (0 × 22) + (1 × 21) + (1 × 20)
+= (1 × 16) + (1 × 8) + (0 × 4) + (1 × 2) + (1 × 1)
+= 16 + 8 + 0 + 2 + 1
+= (27)10. So, (11011)2 = (27)10.
+
+Example 2: Octal to Decimal
+Convert (347)8 to decimal.
+
+(3 × 82) + (4 × 81) + (7 × 80)
+= (3 × 64) + (4 × 8) + (7 × 1)
+= 192 + 32 + 7
+= (231)10. So, (347)8 = (231)10.
+
+Example 3: Hexadecimal to Decimal
+Convert (2A5)16 to decimal.
+
+(2 × 162) + (A × 161) + (5 × 160)
+= (2 × 256) + (10 × 16) + (5 × 1)
+= 512 + 160 + 5
+= (677)10. So, (2A5)16 = (677)10.
+
+<h2>3. Binary to Octal and Hexadecimal Conversion</h2>
+
+Binary to Octal: Group binary digits in sets of three from right to left, adding leading zeros if necessary. Convert each group of three binary digits into its equivalent octal digit.
+
+Example: Convert (11010111)2 to octal.
+
+Group: 011 010 111 (added a leading zero)
+Convert: 3   2   7
+So, (11010111)2 = (327)8.
+
+Binary to Hexadecimal: Group binary digits in sets of four from right to left, adding leading zeros if necessary. Convert each group of four binary digits into its equivalent hexadecimal digit.
+
+Example: Convert (11010111)2 to hexadecimal.
+
+Group: 1101 0111
+Convert: D   7
+So, (11010111)2 = (D7)16.
+
+<h2>4. Octal and Hexadecimal to Binary Conversion</h2>
+
+Octal to Binary: Convert each octal digit into its 3-bit binary equivalent.
+
+Example: Convert (526)8 to binary.
+
+Convert: 5 (101)   2 (010)   6 (110)
+Combine: (101010110)2. So, (526)8 = (101010110)2.
+
+Hexadecimal to Binary: Convert each hexadecimal digit into its 4-bit binary equivalent.
+
+Example: Convert (A3F)16 to binary.
+
+Convert: A (1010)   3 (0011)   F (1111)
+Combine: (101000111111)2. So, (A3F)16 = (101000111111)2.
+
+<h2>Introduction to Boolean Values, Truth Table, Boolean Expression, and Boolean Function</h2>
+
+Boolean Algebra: Named after George Boole, Boolean algebra is a branch of algebra in which the values of the variables are the truth values, true and false, usually denoted 1 and 0 respectively. It is fundamental to the design of digital electronic circuits.
+
+Boolean Values: These are the two possible values in Boolean algebra: True (represented as 1) and False (represented as 0). These correspond to the ON and OFF states of electronic switches.
+
+Truth Table: A truth table is a mathematical table used in logic, specifically in Boolean algebra, to compute the functional values of logical expressions for each combination of input values. It lists all possible input combinations and the corresponding output for a given logical operation or expression.
+
+Boolean Expression: A Boolean expression is an expression formed by combining Boolean variables (which can take values 0 or 1), logical operators (AND, OR, NOT), parentheses, and an equals sign. For example, A + B' is a Boolean expression.
+
+Boolean Function: A Boolean function, also known as a logic function, is an expression that produces a binary output (0 or 1) based on binary inputs. It defines the relationship between input variables and the output of a logic circuit. For a given set of binary variable values, the function can evaluate to either 0 or 1.
+
+<h2>Logic Gates</h2>
+
+Logic gates are the basic building blocks of any digital system. They are electronic circuits that perform basic logical functions based on one or more binary inputs and produce a single binary output. Each gate implements a specific Boolean operation.
+
+Here are the primary logic gates with their symbols, truth tables, and Boolean expressions:
+
+<h2>1. AND Gate</h2>
+
+The AND gate produces a HIGH output (1) only if all its inputs are HIGH (1). Otherwise, the output is LOW (0). It performs logical multiplication.
+
+Symbol:
+
+AND Gate Symbol
+
+Boolean Expression: Y = A ⋅ B (or Y = AB)
+
+Truth Table:
+
+ABY (A ⋅ B)
+
+
+
+
+
+0
+
+0
+
+0
+
+0
+
+1
+
+0
+
+1
+
+0
+
+0
+
+1
+
+1
+
+1
+
+<h2>2. OR Gate</h2>
+
+The OR gate produces a HIGH output (1) if at least one of its inputs is HIGH (1). The output is LOW (0) only if all inputs are LOW (0). It performs logical addition.
+
+Symbol:
+
+OR Gate Symbol
+
+Boolean Expression: Y = A + B
+
+Truth Table:
+
+ABY (A + B)
+
+
+
+
+
+0
+
+0
+
+0
+
+0
+
+1
+
+1
+
+1
+
+0
+
+1
+
+1
+
+1
+
+1
+
+<h2>3. NOT Gate (Inverter)</h2>
+
+The NOT gate has only one input and one output. It inverts the input; if the input is HIGH (1), the output is LOW (0), and vice versa.
+
+Symbol:
+
+NOT Gate Symbol
+
+Boolean Expression: Y = A' (or Y = A)
+
+Truth Table:
+
+AY (A')
+
+
+
+0
+
+1
+
+1
+
+0
+
+<h2>4. NAND Gate (NOT-AND)</h2>
+
+The NAND gate is a combination of an AND gate and a NOT gate. Its output is LOW (0) only if all inputs are HIGH (1); otherwise, the output is HIGH (1).
+
+Symbol:
+
+NAND Gate Symbol
+
+Boolean Expression: Y = (A ⋅ B)'
+
+Truth Table:
+
+ABY (A ⋅ B)'
+
+
+
+
+
+0
+
+0
+
+1
+
+0
+
+1
+
+1
+
+1
+
+0
+
+1
+
+1
+
+1
+
+0
+
+<h2>5. NOR Gate (NOT-OR)</h2>
+
+The NOR gate is a combination of an OR gate and a NOT gate. Its output is HIGH (1) only if all inputs are LOW (0); otherwise, the output is LOW (0).
+
+Symbol:
+
+NOR Gate Symbol
+
+Boolean Expression: Y = (A + B)'
+
+Truth Table:
+
+ABY (A + B)'
+
+
+
+
+
+0
+
+0
+
+1
+
+0
+
+1
+
+0
+
+1
+
+0
+
+0
+
+1
+
+1
+
+0
+
+<h2>6. XOR Gate (Exclusive-OR)</h2>
+
+The XOR gate produces a HIGH output (1) if an odd number of inputs are HIGH (1). For two inputs, it produces a HIGH output if the inputs are different.
+
+Symbol:
+
+XOR Gate Symbol
+
+Boolean Expression: Y = A ⊕ B (or Y = A'B + AB')
+
+Truth Table:
+
+ABY (A ⊕ B)
+
+
+
+
+
+0
+
+0
+
+0
+
+0
+
+1
+
+1
+
+1
+
+0
+
+1
+
+1
+
+1
+
+0
+
+<h2>7. XNOR Gate (Exclusive-NOR)</h2>
+
+The XNOR gate is the complement of the XOR gate. It produces a HIGH output (1) if an even number of inputs are HIGH (1). For two inputs, it produces a HIGH output if the inputs are the same.
+
+Symbol:
+
+XNOR Gate Symbol
+
+Boolean Expression: Y = (A ⊕ B)' (or Y = AB + A'B')
+
+Truth Table:
+
+ABY ((A ⊕ B)')
+
+
+
+
+
+0
+
+0
+
+1
+
+0
+
+1
+
+0
+
+1
+
+0
+
+0
+
+1
+
+1
+
+1
+
+<h2>Laws of Boolean Algebra</h2>
+
+Boolean algebra has several laws that help simplify Boolean expressions and design efficient logic circuits. These laws are similar to algebraic laws but apply to binary variables and logical operations.
+
+Let A, B, and C be Boolean variables (0 or 1).
+
+<h2>1. Commutative Laws</h2>
+
+These laws state that the order of operands does not affect the result.
+
+AND: A ⋅ B = B ⋅ A
+
+OR: A + B = B + A
+
+<h2>2. Associative Laws</h2>
+
+These laws state that the grouping of operands does not affect the result when performing the same operation multiple times.
+
+AND: (A ⋅ B) ⋅ C = A ⋅ (B ⋅ C)
+
+OR: (A + B) + C = A + (B + C)
+
+<h2>3. Distributive Laws</h2>
+
+These laws describe how operations distribute over each other.
+
+AND over OR: A ⋅ (B + C) = (A ⋅ B) + (A ⋅ C)
+
+OR over AND: A + (B ⋅ C) = (A + B) ⋅ (A + C)
+
+<h2>4. De Morgan's Laws</h2>
+
+De Morgan's laws are crucial for simplifying expressions involving complements (NOT operations).
+
+Law 1: (A + B)' = A' ⋅ B' (The complement of a sum is the product of the complements.)
+
+Law 2: (A ⋅ B)' = A' + B' (The complement of a product is the sum of the complements.)
+
+Other important laws and identities:
+
+Identity Law:
+
+A + 0 = A
+
+A ⋅ 1 = A
+
+Null Law:
+
+A + 1 = 1
+
+A ⋅ 0 = 0
+
+Idempotent Law:
+
+A + A = A
+
+A ⋅ A = A
+
+Complement Law:
+
+A + A' = 1
+
+A ⋅ A' = 0
+
+Involution Law (Double Complement): (A')' = A
+
+Absorption Law:
+
+A + (A ⋅ B) = A
+
+A ⋅ (A + B) = A
+
+<h2>Logic Circuits</h2>
+
+Logic circuits (or digital circuits) are physical implementations of Boolean functions using logic gates. They are the fundamental components of digital electronics, such as microprocessors, memory, and other digital devices. Designing a logic circuit involves converting a Boolean expression into a diagram using standard logic gate symbols.
+
+Example: Draw a logic circuit for the Boolean expression Y = A ⋅ B + C'.
+
+Here's how to break it down:
+
+Identify the inputs: A, B, C.
+
+Identify the operations: AND (A ⋅ B), NOT (C'), OR (result of A ⋅ B and C').
+
+Draw the gates in sequence:
+
+An AND gate for A and B.
+
+A NOT gate for C.
+
+An OR gate for the output of the AND gate and the output of the NOT gate.
+
+Logic Circuit Example
+
+In this circuit, the output of the AND gate is A ⋅ B. The output of the NOT gate is C'. These two outputs then feed into the OR gate, producing the final output Y = A ⋅ B + C'.
+        </pre>
     </body>
 </html>
